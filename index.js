@@ -5,13 +5,13 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const port = process.env._PORT ;
+const port = process.env._PORT || 4000 ;
 
 // midlewares
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@my-mongo-1.awz7p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER || doc-online-user}:${process.env.DB_PASS || FATea0r6x2CRdJgC}@my-mongo-1.awz7p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
